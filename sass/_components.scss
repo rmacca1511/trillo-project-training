@@ -71,11 +71,13 @@
     align-self: stretch;
 
     display: flex;
+    align-items: center;
 
     & > * {
         // To all direct children
         padding: 0 2rem;
         cursor: pointer;
+        height: 100%;
         display: flex;
         align-items: center;
     }
@@ -92,9 +94,6 @@
         height: 2.25rem;
         width: 2.25rem;
         fill: var(--color-grey-dark-2);
-
-        // parent element should be position relative
-        position: relative;
     }
 
     &__notification {
@@ -113,20 +112,12 @@
         align-items: center;
     }
 
-    &__user {
-        display: flex;
-        align-items: center;
-    }
-
     &__user-photo {
         height: 3.75rem;
         border-radius: 50%;
         margin-right: 1rem;
     }
 
-    &__user-name {
-
-    }
 }
 
 
@@ -396,7 +387,7 @@
     }
 
     &__friends {
-
+        display: flex;
     }
 
     &__photo {
@@ -407,7 +398,7 @@
         border: 3px solid #fff;
 
         &:not(:last-child) {
-            margin-right: -1.15rem;
+            margin-right: -2rem;
         }
     }
 }
@@ -415,6 +406,7 @@
 
 /////////////////////////////////////////////////////////
 // REVIEWS
+
 .review {
     background-color: #fff;
     box-shadow: var(--shadow-light);
@@ -474,4 +466,71 @@
         font-family: sans-serif;
         z-index: 1;
     }
+}
+
+/////////////////////////////////////////////////////////
+// CALL TO ACTION
+
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}
+
+/////////////////////////////////////////////////////////
+// CALL TO ACTION
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    position: relative; 
+    overflow: hidden;
+    cursor: pointer;
+
+    & > * {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: all .2s;
+    }
+
+    &__visible {
+        padding: 2rem 7.5rem;
+    }
+
+    &__invisible {
+        position: absolute;
+        padding: 2rem 0;
+        left: 0;
+        top: -100%;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+
 }

@@ -57,7 +57,7 @@ body {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-2);
-  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-dark);
   min-height: 50rem; }
 
 .header {
@@ -81,15 +81,14 @@ body {
 
 .hotel-view {
   background-color: #fff;
-  height: 80rem;
   flex: 1; }
 
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
-  border-bottom: var(--line);
-  font-size: 1.4rem; }
+  border-bottom: var(--line); }
 
 .description {
   background-color: #fff;
@@ -147,10 +146,12 @@ body {
 
 .user-nav {
   align-self: stretch;
-  display: flex; }
+  display: flex;
+  align-items: center; }
   .user-nav > * {
     padding: 0 2rem;
     cursor: pointer;
+    height: 100%;
     display: flex;
     align-items: center; }
   .user-nav > *:hover {
@@ -160,8 +161,7 @@ body {
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;
-    fill: var(--color-grey-dark-2);
-    position: relative; }
+    fill: var(--color-grey-dark-2); }
   .user-nav__notification {
     font-size: .8rem;
     height: 1.75rem;
@@ -174,9 +174,6 @@ body {
     right: 1.1rem;
     display: flex;
     justify-content: center;
-    align-items: center; }
-  .user-nav__user {
-    display: flex;
     align-items: center; }
   .user-nav__user-photo {
     height: 3.75rem;
@@ -343,6 +340,8 @@ body {
   align-items: center; }
   .recommend__count {
     margin-right: auto; }
+  .recommend__friends {
+    display: flex; }
   .recommend__photo {
     box-sizing: content-box;
     height: 4rem;
@@ -350,7 +349,7 @@ body {
     border-radius: 50%;
     border: 3px solid #fff; }
     .recommend__photo:not(:last-child) {
-      margin-right: -1.15rem; }
+      margin-right: -2rem; }
 
 .review {
   background-color: #fff;
@@ -395,3 +394,45 @@ body {
     color: var(--color-grey-light-2);
     font-family: sans-serif;
     z-index: 1; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s; }
+  .btn__visible {
+    padding: 2rem 7.5rem; }
+  .btn__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }

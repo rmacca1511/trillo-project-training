@@ -2,7 +2,7 @@
     max-width: 120rem;
     margin: 8rem auto;
     background-color: var(--color-grey-light-2);
-    box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
+    box-shadow: var(--shadow-dark);
 
     min-height: 50rem;
 }
@@ -35,18 +35,15 @@
 .hotel-view {
     background-color: #fff;
 
-    // Test
-    height: 80rem;
-
     flex: 1;
 }
 
 .detail {
+    font-size: 1.4rem;
     display: flex;
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
-    font-size: 1.4rem;
 }
 
 .description {
